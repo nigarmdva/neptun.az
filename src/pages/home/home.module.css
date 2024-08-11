@@ -1,0 +1,29 @@
+.homeContainer {
+  margin: auto;
+}
+.homeStructur {
+  display: flex;
+  flex-direction: column;
+  width: 74%;
+}
+@media (min-width: 768px) {
+  .homeContainer {
+    width: 750px;
+  }
+}
+@media (min-width: 990px) {
+  .homeContainer {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .homeContainer {
+    width: 1200px;
+  }
+}
+
+@media (max-width: 990px) {
+  .homeStructur {
+    width: 100%;
+  }
+}

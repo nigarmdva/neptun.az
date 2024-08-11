@@ -1,0 +1,46 @@
+.carousel-indicators [data-bs-target] button {
+  border-radius: 50% !important;
+  height: 8px !important;
+  width: 8px !important;
+  background-color: #fff !important;
+  transition: all 0.2s ease 0s;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.carousel-indicators .active {
+  background-color: #ff8300 !important;
+  width: 30px !important;
+  height: 8px;
+  /* border-radius: 13px !important; */
+}
+.carousel-indicators [data-bs-target]:hover {
+  cursor: pointer;
+  background-color: #ff8300;
+}
+.carousel-control-next-icon {
+  border-radius: 100% 0 0 100% / 50% 0 0 50%;
+  right: 0% !important;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  color: #ff8300 !important;
+  background-color: #f2f2f27d !important;
+  height: 100px !important;
+  width: 36px !important;
+  position: absolute !important;
+}
+.carousel-control-prev-icon {
+  border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+  left: 0 !important;
+}
+.mainCarosuel,
+.mainCarosuel img {
+  margin: auto;
+  width: 99% !important;
+}
+.carousel-inner {
+  border-radius: 10px;
+}

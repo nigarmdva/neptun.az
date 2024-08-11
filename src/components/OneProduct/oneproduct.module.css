@@ -1,0 +1,162 @@
+@media (min-width: 768px) {
+  .container,
+  .listText {
+    width: 750px;
+  }
+}
+@media (max-width: 768px) {
+  .container,
+  .listText {
+    width: 95%;
+  }
+}
+@media (min-width: 990px) {
+  .container,
+  .listText {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container,
+  .listText {
+    width: 1200px;
+  }
+}
+.container {
+  margin: auto;
+}
+.listText {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font: 600 0.8em sans-serif;
+  flex-wrap: wrap;
+  padding: 40px 0;
+}
+.listText a {
+  color: #6c6c6c;
+}
+.prdCount {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+.prdCount span {
+  font: 700 0.8em sans-serif;
+}
+.prdCount button {
+  color: #ff8300;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  font: 700 1.8em sans-serif;
+}
+.cart {
+  padding: 10px 0 40px 0;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+.cart button {
+  background-color: #ff8300;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 8px 20px;
+  border-radius: 15px;
+  font: 700 0.9em sans-serif;
+}
+.imgs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.imgs img {
+  width: 30%;
+  margin: 20px 0;
+}
+.img img {
+  width: 100%;
+}
+.prItems h6 {
+  font: 600 1.2em sans-serif;
+}
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #ff8300;
+  font-size: 1.3em;
+  margin: 10px 0;
+}
+.comments span {
+  font: 400 0.8em sans-serif;
+}
+.info {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 150px;
+  font: 400 0.8em sans-serif;
+}
+
+input[type="checkbox"] {
+  accent-color: gray;
+}
+.price {
+  font: 600 1.8em sans-serif;
+  color: #ff8300;
+}
+.rate input,
+.rate textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  font: 400 0.7em sans-serif;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+}
+.rate button {
+  background-color: #ff8300;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 8px 20px;
+  border-radius: 15px;
+  font: 400 0.8em sans-serif;
+  margin: 10px 0;
+}
+@media (min-width: 1000px) {
+  .prItems {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+  }
+  .right {
+    margin-left: 30px;
+  }
+  .img {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    display: inline-block;
+  }
+
+  .img img {
+    max-width: 90%;
+    transition: transform 0.5s;
+  }
+
+  .img img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,254 @@
+@media (min-width: 768px) {
+  .listContainer,
+  .textContainer {
+    width: 750px;
+  }
+}
+@media (max-width: 768px) {
+  .listContainer,
+  .textContainer {
+    width: 95%;
+  }
+}
+@media (min-width: 990px) {
+  .listContainer,
+  .textContainer {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .listContainer,
+  .textContainer {
+    width: 1200px;
+  }
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.listContainer,
+.textContainer {
+  margin: auto;
+}
+.listContainer {
+  gap: 10px;
+}
+.listStr {
+  background-color: rgba(242, 242, 242, 1);
+}
+.listText {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font: 600 0.8em sans-serif;
+  padding: 40px 0;
+}
+.listText a {
+  color: #6c6c6c;
+}
+.filtrButton {
+  background-color: #ff8300;
+  color: #fff;
+  font-size: 1.2em;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 3px 20px;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+}
+.filter {
+  visibility: hidden;
+  position: absolute;
+  background-color: #fff;
+  width: 40%;
+  height: 100vh;
+  z-index: 999999999;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  padding: 20px;
+}
+.visible {
+  visibility: visible;
+  animation: slideIn 0.3s forwards;
+}
+.closeFiltr {
+  font-size: 1.2em;
+  cursor: pointer;
+  padding-right: 10px;
+  float: right;
+}
+.alt,
+.priceText,
+.marka {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.price,
+.alt,
+.marka {
+  border-bottom: 1px solid #e8e8e8;
+}
+.name,
+.alt,
+.priceText,
+.marka {
+  padding: 10px;
+  font: 700 0.7em sans-serif;
+  color: #444;
+}
+.name {
+  margin-top: 20px;
+}
+.btnfltr {
+  margin: 20px 0;
+  background-color: #ff8300;
+  color: #fff;
+  font: 700 0.7em sans-serif;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 3px 20px;
+  border-radius: 15px;
+}
+.slider {
+  width: 100%;
+  margin: 20px 0;
+  height: 3px;
+  position: relative;
+  background-color: #ff8300;
+}
+.slider .track {
+  height: 4px;
+  background: #ddd;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+.slider .track-1 {
+  background: #ff8300;
+}
+
+.thumb {
+  height: 10px;
+  width: 10px;
+  background-color: #ff8300;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.pagePer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  width: 100%;
+}
+.pagePer span {
+  font: 400 0.7em sans-serif;
+  margin-right: 10px;
+}
+.pagePer select {
+  width: 90%;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  padding: 7px;
+  font: 600 0.8em sans-serif;
+}
+.compButton {
+  background-color: #ff8300;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
+.compButton a {
+  color: #fff;
+  font: 400 0.8em sans-serif;
+  margin-left: 5px;
+}
+.filtrButton {
+  display: none;
+}
+.prdElem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.grid {
+  display: none;
+}
+.deskList {
+  background-color: #fff;
+  border-radius: 10px;
+}
+@media (max-width: 1000px) {
+  .filtrButton {
+    display: flex;
+  }
+  .deskList {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .prdElem {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 768px) {
+  .compButton {
+    padding: 4px;
+    margin-bottom: 0px;
+    width: 150px;
+  }
+  .pagePer {
+    width: 200px;
+  }
+  .prdElem {
+    gap: 20px;
+  }
+}
+@media (min-width: 1000px) {
+  .left {
+    width: 25%;
+  }
+  .right {
+    width: 75%;
+  }
+  .listContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .grid {
+    color: #6c6c6c;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.7em;
+  }
+}

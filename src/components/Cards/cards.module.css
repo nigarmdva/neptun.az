@@ -1,0 +1,44 @@
+.cards {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.containerCards {
+  padding: 15px;
+}
+.card {
+  background-color: #fff;
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover .img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 86%;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(230, 230, 230, 0.773) 100%
+  );
+  z-index: 1;
+}
+
+.card .img img {
+  width: 100%;
+  transition: transform 0.3s ease-out;
+}
+
+.text {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 990px) {
+  #card2 {
+    display: none;
+  }
+}

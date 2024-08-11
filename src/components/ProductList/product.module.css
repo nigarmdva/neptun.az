@@ -1,0 +1,155 @@
+.prGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+.prGrid img {
+  width: 100%;
+}
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+.product h6 {
+  font: 600 0.6em sans-serif;
+  padding: 0 20px;
+  text-align: center;
+}
+.product p {
+  margin: 10px;
+  font: 700 1.6em sans-serif;
+}
+.prdCount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+}
+.prdCount span {
+  font: 700 0.8em sans-serif;
+}
+.prdCount button {
+  color: #ff8300;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  font: 700 1.8em sans-serif;
+}
+.cart {
+  padding: 10px 0 40px 0;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.cart button {
+  background-color: #ff8300;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 8px 20px;
+  border-radius: 15px;
+  font: 700 0.9em sans-serif;
+}
+.product img {
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* .icon {
+  position: absolute;
+  opacity: 0;
+  background-color: #ff8300;
+  color: #fff;
+}
+.prGrid img:hover .icon {
+  opacity: 1;
+} */
+.prGrid .prItems p {
+  text-align: center;
+}
+.prList .product {
+  background: none;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 20px;
+}
+.prList .prItems {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.prList h6 {
+  font: 300 1.5em sans-serif;
+  padding: 0;
+}
+.prList p {
+  margin: 0;
+}
+.prList .prdCount,
+.prList .cart {
+  justify-content: flex-start;
+}
+.prList img {
+  width: 100%;
+}
+.prGrid .prItems h6:hover,
+.prList .prItems h6:hover {
+  color: #ff8300;
+  cursor: pointer;
+}
+.prList h6:hover h6 {
+  color: #ff8300;
+}
+@media (min-width: 768px) {
+  .product {
+    width: 100%;
+  }
+}
+@media (max-width: 1000px) {
+  .prGrid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .prGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 480px) {
+  .prGrid {
+    grid-template-columns: 1fr;
+  }
+  .prGrid img {
+    width: 70%;
+  }
+}
+@media (max-width: 990px) {
+  .prList .product {
+    flex-direction: column;
+  }
+  /* .prList .img {
+    border: 0.5px solid #000;
+  } */
+  .prList .prItems {
+    float: left;
+  }
+  .prList .prLeft {
+    padding: 0 10px;
+    width: 100%;
+    float: left;
+  }
+  .prList .prItems h6 {
+    font: 400 1.2em sans-serif;
+  }
+}

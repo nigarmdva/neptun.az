@@ -1,0 +1,16 @@
+.sliderText {
+  position: absolute;
+  top: 0;
+  left: 0 !important;
+  height: 100px;
+  width: 200px;
+  color: #fff;
+  font: 600 1em sans-serif;
+  border-radius: 0px 10px 10px 0px;
+  background-color: rgba(41, 41, 41, 0.57);
+  padding: 20px;
+}
+.catgDiv {
+  display: flex;
+  flex-direction: row;
+}

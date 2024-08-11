@@ -1,0 +1,275 @@
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+* {
+  font-family: sans-serif;
+}
+
+.navbar {
+  background-color: #ff8300;
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  box-shadow: -1px 3px 3px 0 rgba(0, 0, 0, 0.2);
+}
+.stickyNav {
+  z-index: 9999992;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.navbarItems {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.items {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #fff;
+}
+
+.hr {
+  width: 1px;
+  height: 20px;
+  background-color: #fff;
+}
+
+.items a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navOpen {
+  border: none;
+  margin-top: 1px;
+  outline: none;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 2px 5px;
+}
+
+.list {
+  background-color: #fff;
+  list-style: none;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  position: absolute;
+  /* transform: translateX(-100%); */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.list li {
+  padding: 5px 0;
+  cursor: pointer;
+}
+.list a {
+  text-decoration: none;
+  color: #555;
+  font: 400 0.8em sans-serif;
+  padding: 5px 15px;
+}
+.list li:hover {
+  background-color: #eee;
+}
+.list li:hover a {
+  color: #ff8300;
+}
+.resp {
+  visibility: hidden;
+  position: absolute;
+  background-color: #fff;
+  width: 40%;
+  height: 100vh;
+  z-index: 999999999;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  padding: 20px;
+}
+
+.resp ul {
+  z-index: 9999;
+}
+.navUl a,
+.navUl1 a {
+  color: #222;
+  font-size: 0.8em;
+}
+.close {
+  font-size: 1.2em;
+  cursor: pointer;
+  padding-right: 10px;
+  float: right;
+}
+.visible {
+  visibility: visible;
+  animation: slideIn 0.3s forwards;
+}
+.hr2 {
+  width: 100%;
+  height: 0.9px;
+  background-color: black;
+}
+.ulRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.navUl1,
+.navUl {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 10px 10px 0;
+  cursor: pointer;
+}
+.navUl:hover .ulRow a {
+  color: #ff8300;
+}
+.navUl1:hover a {
+  color: #ff8300;
+}
+.faminus,
+.faplus {
+  padding: 2px;
+  color: #fff;
+}
+.faplus {
+  background-color: #ff8300;
+}
+.faminus {
+  background-color: #5c5c5c;
+}
+.nestedUl {
+  display: flex;
+  flex-direction: column;
+}
+.nestedUl li {
+  cursor: pointer;
+}
+.nestedUl a {
+  text-decoration: none;
+  color: #000;
+  font: 400 0.6em sans-serif;
+  padding: 10px 0;
+}
+.prof {
+  display: none;
+}
+.down,
+.prof {
+  cursor: pointer;
+}
+.deskCatg,
+.deskItems {
+  display: none;
+}
+.container1 {
+  margin: auto;
+}
+@media (min-width: 1200px) {
+  .container,
+  .container1 {
+    width: 1200px !important;
+  }
+  .megamenu {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+  }
+  .megamenu a {
+    text-decoration: none;
+    color: #fff;
+  }
+}
+@media (min-width: 768px) {
+  .navOpen {
+    display: none;
+  }
+  .prof {
+    display: inline;
+  }
+  .container,
+  .container1 {
+    width: 750px;
+  }
+}
+@media (min-width: 990px) {
+  .container,
+  .container1 {
+    width: 970px;
+  }
+  .respCatg {
+    display: none;
+  }
+  .deskItems {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .deskCatg {
+    display: flex;
+    background-color: #fff;
+    font: 700 1em sans-serif;
+    color: #ff8300;
+    align-items: center;
+    padding: 8px 100px 8px 12px;
+    gap: 5px;
+    position: relative;
+  }
+  .hoverCatg {
+    display: none;
+    width: 242.5px;
+    top: 45px;
+    left: 0;
+    padding: 0;
+    position: absolute;
+    background-color: #fff;
+    z-index: 99999999999999999999999;
+  }
+
+  .deskCatg:hover .hoverCatg,
+  .hoverCatg:hover .hoverCatg {
+    display: flex !important;
+  }
+
+  .deskCatg:hover .border1 {
+    display: none;
+  }
+
+  .border {
+    width: 244px;
+    height: 5px;
+    background-color: #ff8300;
+    border-radius: 5px 5px 0 0;
+  }
+  .border1 {
+    width: 244px;
+    height: 5px;
+    background-color: #ff8300;
+    border-radius: 0 0 5px 5px;
+    position: absolute;
+    z-index: 9999999999999999;
+  }
+}
+@media (max-width: 1200px) {
+  .megamenu {
+    display: none !important;
+  }
+}

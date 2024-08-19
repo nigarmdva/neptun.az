@@ -35,6 +35,7 @@
 }
 .listText a {
   color: #6c6c6c;
+  text-decoration: none;
 }
 .prdCount {
   display: flex;
@@ -131,6 +132,29 @@ input[type="checkbox"] {
   padding: 8px 20px;
   border-radius: 15px;
   font: 400 0.8em sans-serif;
+  margin: 10px 0;
+}
+.textRight {
+  color: #6c6c6c;
+  font-size: 0.8em;
+}
+.setHovered {
+  cursor: pointer;
+  color: #ff8100;
+  transition: color 0.3s ease;
+  font-size: 1.3em;
+}
+.transition {
+  transition: fill 0.3s ease;
+}
+.colorButton {
+  color: #ff8300;
+}
+.itemSpan {
+  font: 400 0.7em sans-serif;
+}
+.itemP {
+  font-weight: 700;
   margin: 10px 0;
 }
 @media (min-width: 1000px) {

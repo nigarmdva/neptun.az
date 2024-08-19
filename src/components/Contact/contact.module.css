@@ -1,0 +1,102 @@
+@media (min-width: 768px) {
+  .container,
+  .listText {
+    width: 750px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+}
+@media (min-width: 990px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
+}
+.container {
+  margin: auto;
+  padding-bottom: 50px;
+}
+.b5ckContact {
+  background-color: #f2f2f2;
+}
+.rightIcon {
+  color: #6c6c6c;
+  font-size: 0.8em;
+}
+.text {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font: 600 0.8em sans-serif;
+  padding: 40px 0;
+}
+.text a {
+  color: #6c6c6c;
+  text-decoration: none;
+}
+.contactDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.locationIcon,
+.mailIcon,
+.phoneIcon {
+  color: #ff8300;
+  font-size: 3em;
+}
+.location,
+.phone,
+.mail {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 10px;
+}
+.location:hover .locationText,
+.phone:hover .phoneText,
+.mail:hover .mailText {
+  color: #ff8300;
+  cursor: pointer;
+}
+.locationText {
+  display: flex;
+  flex-direction: column;
+  /* gap: 5px; */
+}
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.inputs input,
+textarea {
+  outline: none;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+.inputs input::placeholder,
+textarea::placeholder {
+  color: #6c6c6c;
+  font-size: 0.7em;
+}
+.contactItems button {
+  background-color: #ff8300;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 8px 20px;
+  border-radius: 15px;
+  font: 400 0.8em sans-serif;
+  margin: 10px 0;
+}

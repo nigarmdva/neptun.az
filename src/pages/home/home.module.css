@@ -2,9 +2,10 @@
   margin: auto;
 }
 .homeStructur {
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
   width: 74%;
+  margin: 10px 0 0 10px;
 }
 @media (min-width: 768px) {
   .homeContainer {

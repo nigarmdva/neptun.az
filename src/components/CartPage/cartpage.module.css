@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+@media (min-width: 768px) {
+  .container,
+  .listText {
+    width: 750px;
+  }
+}
+@media (max-width: 768px) {
+  .container,
+  .listText {
+    width: 95%;
+  }
+}
+@media (min-width: 990px) {
+  .container,
+  .listText {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container,
+  .listText {
+    width: 1200px;
+  }
+}
+.container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.cartPage {
+  background-color: #f2f2f2;
+}
+.cartPageItems h2 {
+  font-family: "Noto Sans", sans-serif;
+}
+.listText {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font: 600 0.8em sans-serif;
+  flex-wrap: wrap;
+  padding: 40px 0;
+}
+.listText a {
+  color: #6c6c6c;
+  text-decoration: none;
+}
+.cartTable {
+  width: 100%;
+  font-size: 0.7em;
+  text-align: center;
+}
+.cartTable {
+  margin-bottom: 50px;
+}
+.tableContainer {
+  overflow-x: scroll;
+}
+.tableContainer th,
+.tableContainer td {
+  padding: 8px 16px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.cartTable th {
+  background-color: #ddd;
+  border: 1px solid #ddd;
+}
+table th {
+  padding: 10px;
+}
+.cartTable table tr,
+td {
+  border: 1px solid #ddd;
+}
+.cartTable table th {
+  background-color: #ddd;
+}
+table td img {
+  width: 85px;
+}
+table td input {
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+}
+.refresh {
+  background-color: #ff8300 !important;
+}
+.refresh,
+.remove {
+  color: #fff !important;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 15px;
+  width: 60px;
+  outline: none;
+  border: none;
+  font-size: 1.2em;
+}
+.refresh:hover,
+.remove:hover {
+  background-color: #e97901 !important;
+}
+
+.remove {
+  background-color: #d9534f;
+}
+.rightIcon {
+  color: #6c6c6c;
+  font-size: 0.8em;
+}
+.noItems {
+  text-align: center;
+  padding: 20px 0;
+}
+.noItems a {
+  padding: 10px 30px;
+  margin: 10px;
+  background-color: #ff8300;
+  color: #fff;
+  border-radius: 60px;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+  font: 600 0.9em "Noto Sans", sans-serif;
+  transition: background-color 0.3s ease;
+}
+.noItems a:hover {
+  background-color: #999;
+}
+.noItems h6 {
+  color: #7d7d7d;
+  margin: 10px 0 20px;
+  font-family: "Noto Sans", sans-serif;
+}
+.noItems h2 {
+  font: 700 2em "Noto Sans", sans-serif;
+  text-transform: uppercase;
+}
+.cartButtons {
+  width: 200px;
+}
+.cartKupon,
+.kuponInputDiv,
+.show {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+.cartKupon {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.cartKupon:hover {
+  color: #ff8300;
+}
+.kuponInputDiv {
+  max-height: 0;
+  padding: 15px;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  opacity: 0;
+  display: flex;
+  gap: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.show {
+  max-height: 180px;
+  opacity: 1;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+.kuponInputDiv input,
+button {
+  outline: none;
+  border: none;
+}
+.kuponInputDiv button {
+  background-color: #ff8300;
+  color: #fff;
+  padding: 6px 18px;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 120px;
+  font: 600 0.8em "Noto Sans", sans-serif;
+}
+.kuponInputDiv input {
+  width: 80%;
+}
+.kuponInputDiv input::placeholder {
+  font: 400 0.8em "Noto Sans", sans-serif;
+}
+.spanKupon {
+  width: 90px;
+  font: 600 0.7em "Noto Sans", sans-serif;
+}
+.totalCartPrice {
+  display: flex;
+  flex-direction: column;
+  float: right;
+}
+.totalCartPrice table {
+  width: 500px;
+  float: right;
+  margin-bottom: 20px;
+}
+.totalCartPrice table td {
+  padding: 10px 20px;
+  text-align: right;
+}
+.boldText {
+  font-weight: 700;
+}
+.totalCartPrice a {
+  float: right;
+}
+.kuponInputDiv button:hover,
+.totalCartPrice a:hover,
+.backShop a:hover {
+  background-color: #e97901;
+}
+.totalCartPrice a,
+.backShop a {
+  background-color: #ff8300;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 60px;
+  cursor: pointer;
+  text-decoration: none;
+  font: 600 0.8em "Noto Sans", sans-serif;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+}
+.backShop {
+  margin: 120px 0 20px;
+}

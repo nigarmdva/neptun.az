@@ -1,6 +1,6 @@
 import React from "react";
 import styleCards from "./cards.module.css";
-import { FaArrowRightLong } from "react-icons/fa6";
+import { BsArrowRight } from "react-icons/bs";
 
 const Cards = () => {
   return (
@@ -13,7 +13,7 @@ const Cards = () => {
             </div>
             <div className={styleCards.text}>
               <span>50 AZN 50 Bonus</span>
-              <FaArrowRightLong style={{ fontSize: "1.6em" }} />
+              <BsArrowRight className={styleCards.cardIcon} />
             </div>
           </div>
           <div className={styleCards.card} id={styleCards.card2}>
@@ -22,7 +22,7 @@ const Cards = () => {
             </div>
             <div className={styleCards.text}>
               <span>Neptunda dadlı endirimlər</span>
-              <FaArrowRightLong style={{ fontSize: "1.6em" }} />
+              <BsArrowRight className={styleCards.cardIcon} />
             </div>
           </div>
           <div className={styleCards.card}>
@@ -31,7 +31,7 @@ const Cards = () => {
             </div>
             <div className={styleCards.text}>
               <span>Həftəsonu endirimləri Neptunda!</span>
-              <FaArrowRightLong style={{ fontSize: "1.6em" }} />
+              <BsArrowRight className={styleCards.cardIcon} />
             </div>
           </div>
         </div>

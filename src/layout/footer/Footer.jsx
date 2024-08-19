@@ -21,27 +21,27 @@ const Footer = () => {
         <div className={footStyle.container}>
           <div className={footStyle.inner}>
             <div className={footStyle.info}>
-              <img src="./img/delivery.svg" alt="Delivery" />
+              <img src="/img/delivery.svg" alt="Delivery" />
               <span>Pulsuz Çatdırılma</span>
               <span>50 AZN-dən yuxarı</span>
             </div>
             <div className={footStyle.info}>
-              <img src="./img/cash.svg" alt="Cash" />
+              <img src="/img/cash.svg" alt="Cash" />
               <span>Nağd və ya</span>
               <span>Kartla ödəniş</span>
             </div>
             <div className={footStyle.info}>
-              <img src="./img/gift.svg" alt="Gift" />
+              <img src="/img/gift.svg" alt="Gift" />
               <span>Hədiyyə</span>
               <span>Kuponları</span>
             </div>
             <div className={footStyle.info2}>
-              <img src="./img/online.svg" alt="Online" />
+              <img src="/img/online.svg" alt="Online" />
               <span>Onlayn</span>
               <span>Müştəri xidmətləri</span>
             </div>
             <div className={footStyle.info2}>
-              <img src="./img/mobile.svg" alt="Mobile" />
+              <img src="/img/mobile.svg" alt="Mobile" />
               <span>Sürətli</span>
               <span>Mobil mağaza</span>
             </div>
@@ -168,7 +168,7 @@ const Footer = () => {
         </div>
       </div>
       <div className={footStyle.foot}>
-        <img src="./img/visalogo.svg" alt="Visa" />
+        <img src="/img/visalogo.svg" alt="Visa" />
       </div>
     </>
   );

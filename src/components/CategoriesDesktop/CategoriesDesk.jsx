@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, forwardRef } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { FaAngleRight } from "react-icons/fa6";
 import catStyle from "./catgdesk.module.css";
 
-function CategoriesDesk({ isVisible }) {
+const CategoriesDesk = forwardRef((props, ref) => {
   const [menu, setMenu] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -27,10 +27,6 @@ function CategoriesDesk({ isVisible }) {
     }
   }
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
   if (error) {
     return <div>Error: {error}</div>;
   }
@@ -44,7 +40,7 @@ function CategoriesDesk({ isVisible }) {
               <img src={item.icon} alt={item.name} />
               <span>{item.name}</span>
             </div>
-            <FaAngleRight style={{ fontSize: "0.5em" }} />
+            <FaAngleRight className={catStyle.catRight} />
             <div className={catStyle.subMenu}>
               {item.submenu &&
                 item.submenu.map((a, index) => (
@@ -52,6 +48,7 @@ function CategoriesDesk({ isVisible }) {
                     key={index}
                     to={`/${a.slug}`}
                     className={catStyle.subMenuItem}
+                    ref={ref}
                   >
                     {a.name}
                   </NavLink>
@@ -64,6 +61,6 @@ function CategoriesDesk({ isVisible }) {
       <Outlet />
     </div>
   );
-}
+});
 
 export default CategoriesDesk;

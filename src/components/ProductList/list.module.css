@@ -38,6 +38,10 @@
 }
 .listContainer {
   gap: 10px;
+  height: auto;
+}
+.fontRight {
+  font-size: 0.7em;
 }
 .listStr {
   background-color: rgba(242, 242, 242, 1);
@@ -51,6 +55,7 @@
 }
 .listText a {
   color: #6c6c6c;
+  text-decoration: none;
 }
 .filtrButton {
   background-color: #ff8300;
@@ -202,6 +207,50 @@
 .deskList {
   background-color: #fff;
   border-radius: 10px;
+}
+.listRight {
+  color: #6c6c6c;
+  font-size: 0.8em;
+}
+.listCatg {
+  display: flex;
+  justify-content: center;
+}
+.down {
+  font-size: 0.7em;
+}
+.resetDiv {
+  display: flex;
+  justify-content: center;
+}
+.rightListDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 95%;
+  margin: auto;
+}
+.colorOrange {
+  color: #ff8300;
+}
+.colorGray {
+  color: #6c6c6c;
+}
+.fontSize {
+  font-size: 1.3em;
+}
+.noProduct {
+  text-align: center;
+}
+.rangeValues {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+  color: #6c6c6c;
+  font-size: 0.8em;
+}
+.listCatg {
+  cursor: pointer;
 }
 @media (max-width: 1000px) {
   .filtrButton {

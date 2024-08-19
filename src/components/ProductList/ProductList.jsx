@@ -7,7 +7,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { SlRefresh } from "react-icons/sl";
 import { IoGrid } from "react-icons/io5";
 
-import Slider from "react-slider";
+import RangeSlider from "react-range-slider-input";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "react-range-slider-input/dist/style.css";
 import ReactPaginate from "react-paginate";
@@ -75,6 +75,7 @@ const ProductList = () => {
   }, [data, subCategory]);
 
   const handleInput = (values) => {
+    console.log(values);
     setMinValue(values[0]);
     setMaxValue(values[1]);
   };
@@ -132,13 +133,13 @@ const ProductList = () => {
         <div className={listStyle.textContainer}>
           <div className={listStyle.listText}>
             <Link to={"/"}>Ana Səhifə</Link>
-            <FaChevronRight style={{ color: "6c6c6c", fontSize: ".8em" }} />
+            <FaChevronRight className={listStyle.listRight} />
             <Link to={"/"}>{category}</Link>
-            <FaChevronRight style={{ color: "6c6c6c", fontSize: ".8em" }} />
+            <FaChevronRight className={listStyle.listRight} />
             <Link to={"/"}>{subCategory}</Link>
           </div>
         </div>
-        <div className={listStyle.listContainer} style={{ height: "auto" }}>
+        <div className={listStyle.listContainer}>
           <div className={listStyle.left}>
             <button
               className={listStyle.filtrButton}
@@ -160,41 +161,59 @@ const ProductList = () => {
               <h3 className={listStyle.name}>Filtr</h3>
               <div className={listStyle.alt}>
                 <span>Alt Kateqoriya</span>
-                <FaChevronRight style={{ fontSize: ".7em" }} />
+                <FaChevronRight className={listStyle.fontRight} />
+              </div>
+              <div>
+                {data.map((category) => (
+                  <div
+                    key={category.id}
+                    className={listStyle.category}
+                    onClick={() => setSubCategory(category.name)}
+                  >
+                    {category.name}
+                  </div>
+                ))}
               </div>
               <div className={listStyle.marka}>
                 <span>Markası</span>
-                <FaChevronRight style={{ fontSize: ".7em" }} />
+                <FaChevronRight className={listStyle.fontRight} />
               </div>
               <div className={listStyle.price}>
                 <div className={listStyle.priceText}>
                   <span>Qiymət</span>
-                  <FaChevronRight style={{ fontSize: ".7em" }} />
+                  {activeCatg === "price" ? (
+                    <FaChevronDown
+                      className={listStyle.down}
+                      onClick={() => toggleCatg("price")}
+                    />
+                  ) : (
+                    <FaChevronRight
+                      className={listStyle.down}
+                      onClick={() => toggleCatg("price")}
+                    />
+                  )}
                 </div>
-                <div>
-                  <p>Minimum Price: {minValue} AZN</p>
-                  <p>Maximum Price: {maxValue} AZN</p>
-                </div>
-                {filteredData.length > 0 && (
-                  <Slider
-                    className={listStyle.slider}
-                    value={[minValue, maxValue]}
-                    onChange={handleInput}
-                    min={Math.min(...filteredData.map((item) => item.price))}
-                    max={Math.max(...filteredData.map((item) => item.price))}
-                    step={1}
-                    withBars
-                    pearling
-                    minDistance={10}
-                    renderThumb={(props, state) => (
-                      <div {...props} className={listStyle.thumb}>
-                        {state.valueNow}
-                      </div>
-                    )}
-                  />
+
+                {activeCatg === "price" && (
+                  <div className={listStyle.rangeContainer}>
+                    <RangeSlider
+                      className={listStyle.rangeSlider}
+                      // values={[minValue, maxValue]}
+                      // defaultValue={[minValue, maxValue]}
+                      onInput={handleInput}
+                      step={1}
+                      minDistance={10}
+                      customClasses="rangeSlider"
+                      secondaryBgColor="var(#ff8300)"
+                    />
+                    <div className={listStyle.rangeValues}>
+                      <span>{minValue} AZN</span>
+                      <span> {maxValue} AZN</span>
+                    </div>
+                  </div>
                 )}
               </div>
-              <div style={{ display: "flex", justifyContent: "center" }}>
+              <div className={listStyle.listCatg}>
                 <button
                   className={listStyle.btnfltr}
                   onClick={handleResetFilter}
@@ -209,12 +228,12 @@ const ProductList = () => {
                 <span>Alt Kateqoriya</span>
                 {activeCatg === "alt" ? (
                   <FaChevronDown
-                    style={{ fontSize: ".7em" }}
+                    className={listStyle.down}
                     onClick={() => toggleCatg("alt")}
                   />
                 ) : (
                   <FaChevronRight
-                    style={{ fontSize: ".7em" }}
+                    className={listStyle.down}
                     onClick={() => toggleCatg("alt")}
                   />
                 )}
@@ -223,12 +242,12 @@ const ProductList = () => {
                 <span>Markası</span>
                 {activeCatg === "marka" ? (
                   <FaChevronDown
-                    style={{ fontSize: ".7em" }}
+                    className={listStyle.down}
                     onClick={() => toggleCatg("marka")}
                   />
                 ) : (
                   <FaChevronRight
-                    style={{ fontSize: ".7em" }}
+                    className={listStyle.down}
                     onClick={() => toggleCatg("marka")}
                   />
                 )}
@@ -238,24 +257,36 @@ const ProductList = () => {
                   <span>Qiymət</span>
                   {activeCatg === "price" ? (
                     <FaChevronDown
-                      style={{ fontSize: ".7em" }}
+                      className={listStyle.down}
                       onClick={() => toggleCatg("price")}
                     />
                   ) : (
                     <FaChevronRight
-                      style={{ fontSize: ".7em" }}
+                      className={listStyle.down}
                       onClick={() => toggleCatg("price")}
                     />
                   )}
                 </div>
                 {activeCatg === "price" && (
-                  <div>
-                    <p>Minimum Price: {minValue} AZN</p>
-                    <p>Maximum Price: {maxValue} AZN</p>
+                  <div className={listStyle.rangeContainer}>
+                    <RangeSlider
+                      className={listStyle.rangeSlider}
+                      values={[minValue, maxValue]}
+                      defaultValue={[minValue, maxValue]}
+                      onInput={handleInput}
+                      step={1}
+                      minDistance={10}
+                      customClasses="rangeSlider"
+                      secondaryBgColor="var(#ff8300)"
+                    />
+                    <div className={listStyle.rangeValues}>
+                      <span>{minValue} AZN</span>
+                      <span> {maxValue} AZN</span>
+                    </div>
                   </div>
                 )}
               </div>
-              <div style={{ display: "flex", justifyContent: "center" }}>
+              <div className={listStyle.resetDiv}>
                 <button
                   className={listStyle.btnfltr}
                   onClick={handleResetFilter}
@@ -266,26 +297,18 @@ const ProductList = () => {
             </div>
           </div>
           <div className={listStyle.right}>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-                width: "95%",
-                margin: "auto",
-              }}
-            >
+            <div className={listStyle.rightListDiv}>
               <div className={listStyle.grid}>
                 <NavLink>
                   <IoGrid
                     onClick={() => handleViewChange("grid")}
-                    style={{ color: "#ff8300" }}
+                    className={listStyle.colorOrange}
                   />
                 </NavLink>
                 <NavLink>
                   <GiHamburgerMenu
                     onClick={() => handleViewChange("list")}
-                    style={{ color: "#6c6c6c" }}
+                    className={listStyle.colorGray}
                   />
                 </NavLink>
               </div>
@@ -325,7 +348,7 @@ const ProductList = () => {
                   </select>
                 </div>
                 <div className={listStyle.compButton}>
-                  <SlRefresh style={{ fontSize: "1.3em" }} />
+                  <SlRefresh className={listStyle.fontSize} />
                   <Link to={""}>Müqayisə et</Link>
                 </div>
               </div>
@@ -341,7 +364,7 @@ const ProductList = () => {
               ))}
 
               {filteredData.length === 0 && (
-                <h1 style={{ textAlign: "center" }}>
+                <h1 className={listStyle.noProduct}>
                   Heç bir məhsul tapılmadı.
                 </h1>
               )}

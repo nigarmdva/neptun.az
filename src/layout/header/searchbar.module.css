@@ -19,6 +19,9 @@
 .searchNav {
   justify-content: space-between;
 }
+.phone {
+  align-items: center;
+}
 .inputDiv {
   width: 58.3%;
   border: 1px solid #ff8300;
@@ -63,6 +66,13 @@
 }
 .phone {
   display: none;
+}
+.searchImg {
+  width: 25%;
+}
+.searchInputIcon {
+  font-size: 20px;
+  color: #ff6600;
 }
 @media (min-width: 768px) {
   .menuAlt {

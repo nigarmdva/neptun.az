@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FaMinus } from "react-icons/fa";
 import catStyle from "./categories.module.css";
 
@@ -28,13 +28,13 @@ function Categories({ isVisible }) {
     }
   }
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
   if (error) {
     return <div>Error: {error}</div>;
   }
+
+  const handleMenuClick = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
     <div
@@ -48,7 +48,7 @@ function Categories({ isVisible }) {
             className={`${catStyle.menuItemHeader} ${
               openIndex === i ? catStyle.active : ""
             }`}
-            onClick={() => setOpenIndex(openIndex === i ? null : i)}
+            onClick={() => handleMenuClick(i)}
           >
             <img src={item.icon} alt={item.name} />
             <span>{item.name}</span>
@@ -72,7 +72,6 @@ function Categories({ isVisible }) {
           </div>
         </div>
       ))}
-      {/* <Outlet /> */}
     </div>
   );
 }

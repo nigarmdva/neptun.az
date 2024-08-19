@@ -1,18 +1,17 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-// import "swiper/swiper-bundle.min.css";
 
 const CardCarousel = ({ cards }) => {
   return (
     <Swiper
       spaceBetween={30}
-      slidesPerView={4} // Display 4 cards per slide
+      slidesPerView={4}
       navigation
       pagination={{ clickable: true }}
     >
-      {cards.map((card, index) => (
+      {cards.map((card) => (
         <SwiperSlide
-          key={index}
+          key={card.id}
           style={{ display: "flex", justifyContent: "center" }}
         >
           <div
@@ -31,7 +30,7 @@ const CardCarousel = ({ cards }) => {
             />
             <div style={{ padding: "16px" }}>
               <h5 style={{ margin: "0 0 8px" }}>{card.title}</h5>
-              <p style={{ margin: 0 }}>Price: ${card.price}</p>
+              <p style={{ margin: 0 }}>Price: {card.price}₼</p>
             </div>
           </div>
         </SwiperSlide>

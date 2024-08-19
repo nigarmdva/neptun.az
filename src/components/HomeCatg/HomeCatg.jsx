@@ -1,11 +1,14 @@
+// src/components/HomeCatg.js
+
 import React, { useState } from "react";
-import { Carousel as BootstrapCarousel } from "react-bootstrap";
+import { Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import homecatgStyle from "./homecatg.module.css";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import { NavLink } from "react-router-dom";
+import ProductCarousel from "./ProductCarousel";
 
 const HomeCatg = () => {
+  const [count, setCount] = useState(1);
   const [activeIndex, setActiveIndex] = useState(0);
 
   const data = [
@@ -38,67 +41,141 @@ const HomeCatg = () => {
           price: 3.25,
           img: "https://neptun.az/image/cache/catalog/A.Narmin/A.Narmin2/narminn/nrmn/untitled%20folder/narminn/Narmin/narmin/nrmnn/qovluq/narmin/MVT.ARMUDKONFRANSKG-270x270.jpg?v=9",
         },
-        {
-          id: 20,
-          title: "MVT.NAR KG",
-          price: 7.45,
-          img: "https://neptun.az/image/cache/catalog/aa-270x270.jpg?v=9",
-          subcategoryName: "meyve",
-          categoryName: "meyve-terevez-quru-meyveler",
-        },
-        {
-          id: 21,
-          title: "MVT.LIMON TURK EDED",
-          price: 0.25,
-          img: "https://neptun.az/image/cache/catalog/LIOON-270x270.jpg?v=9",
-          subcategoryName: "meyve",
-          categoryName: "meyve-terevez-quru-meyveler",
-        },
-        {
-          id: 22,
-          title: "MVT.ALMA SEMERINKA YERLI KG",
-          price: 2.65,
-          img: "https://neptun.az/image/cache/catalog/b-270x270.jpg?v=9",
-          subcategoryName: "meyve",
-          categoryName: "meyve-terevez-quru-meyveler",
-        },
-        {
-          id: 23,
-          title: "MVT.UZUM QARA KG",
-          price: 6.8,
-          img: "https://neptun.az/image/cache/catalog/MVT.UZUMQARAKG-270x270.jpg?v=9",
-          subcategoryName: "meyve",
-          categoryName: "meyve-terevez-quru-meyveler",
-        },
-        {
-          id: 24,
-          title: "MVT.ALMA GOLDEN QIRMIZI KG",
-          price: 4.65,
-          img: "https://neptun.az/image/cache/catalog/Brands/44656545454-270x270.jpg?v=9",
-          subcategoryName: "meyve",
-          categoryName: "meyve-terevez-quru-meyveler",
-        },
       ],
     },
     {
       id: 2,
       name: "Quru Meyvələr",
       image: "/img/catg2.jpg",
+      cards: [
+        {
+          id: 1923,
+          title: "CER.ARMUD QURUSU KG",
+          price: 10.2,
+          img: "https://neptun.az/image/cache/catalog/meyve-terevez/qurumeyveler/096889-270x270.jpg?v=9",
+        },
+        {
+          id: 1924,
+          title: "CER.PAPAYA QURUSU KG",
+          price: 11.5,
+          img: "https://neptun.az/image/cache/catalog/ciyelek_qurusu-270x270.jpg?v=9",
+        },
+        {
+          id: 1925,
+          title: "CER.MANQO QURUSU KG",
+          price: 16.9,
+          img: "https://neptun.az/image/cache/catalog/meyve-terevez/qurumeyveler/078043-270x270.jpg?v=9",
+        },
+      ],
     },
     {
       id: 3,
       name: "NesCake",
       image: "/img/catg3.jpg",
+      cards: [
+        {
+          id: 752,
+          title: "7 DAYS 200GR MINI KRUASAN KREM-KAKAO",
+          price: 2.69,
+          img: "https://neptun.az/image/cache/catalog/7DAYS200GRMINIKRUASANKREM-KAKAO-270x270.jpg?v=9",
+        },
+        {
+          id: 754,
+          title: "7 DAYS 175GR KEKS VANIL",
+          price: 3.5,
+          img: "https://neptun.az/image/cache/catalog/Brands/541534534534534534534354-270x270.jpg?v=9",
+        },
+        {
+          id: 755,
+          title: "7 DAYS 150GR KEKS KAKAO",
+          price: 3.5,
+          img: "https://neptun.az/image/cache/catalog/7days150grkeks-270x270.jpg?v=9",
+        },
+        {
+          id: 757,
+          title: "7 DAYS 200GR MINI KRUSSAN KREM-VANIL",
+          price: 2.69,
+          img: "https://neptun.az/image/cache/catalog/mini-kruassany-7days-vanil-18sht-105gr-270x270.jpg?v=9",
+        },
+      ],
     },
     {
       id: 4,
       name: "Yalnız Neptunda",
       image: "/img/catg4.jpg",
+      cards: [
+        {
+          id: 1367,
+          title: "ABC 1.5KG CAMASIR TOZU RENGLI AVTOMAT",
+          price: 5.95,
+          img: "https://neptun.az/image/cache/catalog/abc1-270x270.jpg?v=9",
+          subcategoryName: "paltarlar-ucun",
+          categoryName: "yuyucu-temizleyici-vasiteler",
+        },
+        {
+          id: 1368,
+          title: "ABC 1800GR CAMASIR TOZU LAVANDA ETIRLI ELDE",
+          price: 5.6,
+          img: "https://neptun.az/image/cache/catalog/abceldeyikama2-270x270.jpg?v=9",
+          subcategoryName: "paltarlar-ucun",
+          categoryName: "yuyucu-temizleyici-vasiteler",
+        },
+        {
+          id: 1369,
+          title: "ABC 2.5KG CAMASIR TOZU GUL ETIRLI AVTOMAT",
+          price: 8.46,
+          img: "https://neptun.az/image/cache/catalog/Brands/6516546546546546565156-270x270.jpg?v=9",
+          subcategoryName: "paltarlar-ucun",
+          categoryName: "yuyucu-temizleyici-vasiteler",
+        },
+        {
+          id: 1370,
+          title: "ABC 600GR CAMASIR TOZU LAVANDA ETIRLI",
+          price: 2.65,
+          img: "https://neptun.az/image/cache/catalog/abc600lavanta-270x270.jpg?v=9",
+          subcategoryName: "paltarlar-ucun",
+          categoryName: "yuyucu-temizleyici-vasiteler",
+        },
+      ],
     },
     {
       id: 5,
       name: "Səhər Yeməkləri",
       image: "/img/catg5.jpg",
+      cards: [
+        {
+          id: 173,
+          title: "CARICINO 500GR KOLBASA QOST DOKTORSKAYA",
+          price: 12.89,
+          img: "https://neptun.az/image/cache/catalog/A.Narmin/A.Narmin2/narminn/CARICINO500GRKOLBASAQOSTDOKTORSKAYA(2)-270x270.jpg?v=9",
+          subcategoryName: "kolbasa-sosisler",
+          categoryName: "qastronom",
+        },
+        {
+          id: 174,
+          title: "CARICINO 400GR VETCINA IZ INDEYKI",
+          price: 9.89,
+          img: "https://neptun.az/image/cache/logo-270x270.png?v=9",
+          subcategoryName: "kolbasa-sosisler",
+          categoryName: "qastronom",
+        },
+        {
+          id: 175,
+          title: "CARICINO 150GR DOGRANMIS BEKON B/H/V VAKUUM",
+          price: 7.49,
+          img: "https://neptun.az/image/cache/logo-270x270.png?v=9",
+          subcategoryName: "kolbasa-sosisler",
+          categoryName: "qastronom",
+        },
+        {
+          id: 176,
+          title: "CARICINO 500GR KOLBASA S NAT.MOLOKOM RUSSKAYA",
+          price: 9.89,
+          img: "https://neptun.az/image/cache/catalog/A.Narmin/A.Narmin2/narminn/CARICINO500GRKOLBASAQOSTRUSSKAYA-270x270.jpg?v=9",
+          subcategoryName: "kolbasa-sosisler",
+          categoryName: "qastronom",
+        },
+      ],
     },
   ];
 
@@ -109,78 +186,34 @@ const HomeCatg = () => {
     console.log("Selected Category:", data[selectedIndex]);
   };
 
-  const responsive = {
-    superLargeDesktop: {
-      breakpoint: { max: 4000, min: 1024 },
-      items: 5,
-    },
-    desktop: {
-      breakpoint: { max: 1024, min: 768 },
-      items: 3,
-    },
-    tablet: {
-      breakpoint: { max: 768, min: 464 },
-      items: 2,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
-  };
   return (
     <div className={homecatgStyle.catgDiv}>
-      <BootstrapCarousel
+      <Carousel
         activeIndex={activeIndex}
         onSelect={handleSelect}
-        style={{ width: "400px", display: "flex", margin: "30px 0" }}
+        className={homecatgStyle.homeCarousel}
       >
         {data.map((item) => (
-          <BootstrapCarousel.Item key={item.id}>
+          <Carousel.Item key={item.id}>
             <img
-              className="d-block w-100"
+              className={homecatgStyle.homeCarouselItem}
               src={item.image}
               alt={item.name}
-              style={{ width: "375px" }}
             />
-            <BootstrapCarousel.Caption className={homecatgStyle.sliderText}>
+            <Carousel.Caption className={homecatgStyle.sliderText}>
               <span>Kateqoriyalar:</span>
-              <p style={{ color: "#fff" }}>{item.name}</p>
-            </BootstrapCarousel.Caption>
-          </BootstrapCarousel.Item>
+              <p>{item.name}</p>
+            </Carousel.Caption>
+          </Carousel.Item>
         ))}
-      </BootstrapCarousel>
+      </Carousel>
 
       {selectedCategory && selectedCategory.cards && (
-        <Carousel
-          style={{ display: "flex", flexWrap: "wrap" }}
-          className="d-flex "
-          responsive={responsive}
-        >
-          <div className="d-flex flex-row">
-            {selectedCategory.cards.map((card) => (
-              <div
-                key={card.id}
-                style={{
-                  width: "200px",
-                  border: "1px solid #ddd",
-                  borderRadius: "8px",
-                  overflow: "hidden",
-                  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                }}
-              >
-                <img
-                  src={card.img}
-                  alt={card.title}
-                  style={{ width: "100%", height: "auto" }}
-                />
-                <div style={{ padding: "16px" }}>
-                  <h5 style={{ margin: "0 0 8px" }}>{card.title}</h5>
-                  <p style={{ margin: 0 }}>Price: ${card.price}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </Carousel>
+        <ProductCarousel
+          cards={selectedCategory.cards}
+          count={count}
+          setCount={setCount}
+        />
       )}
     </div>
   );

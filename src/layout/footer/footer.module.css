@@ -71,12 +71,12 @@
   background-color: #ff8300;
   border: none;
   outline: none;
-  padding: 11px 16px;
+  padding: 12px 16px;
   border-radius: 20px;
   position: absolute;
   right: 1.2px;
   transition: 0.3s all ease 0s;
-  top: 1.2px;
+  top: 1.5px;
   color: #fff;
   cursor: pointer;
 }

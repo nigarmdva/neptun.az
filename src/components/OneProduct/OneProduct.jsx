@@ -2,8 +2,16 @@ import React, { useState } from "react";
 import { useParams, useLocation, Link } from "react-router-dom";
 import oneStyle from "./oneproduct.module.css";
 import { FaChevronRight, FaRegStar, FaStar } from "react-icons/fa";
-import { GrFavorite } from "react-icons/gr";
+import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
 import { SlRefresh } from "react-icons/sl";
+import { useDispatch } from "react-redux";
+import { addToBasket } from "../../features/redux/basketSlice";
+import {
+  addToWishList,
+  removeWishItem,
+} from "../../features/redux/wishlists/wishSlice";
+import BasketModal from "../BasketModal/BasketModal";
+import WishModal from "../WishModal/WishModal";
 
 const OneProduct = () => {
   const { category, subCategory, id } = useParams();
@@ -12,10 +20,16 @@ const OneProduct = () => {
   const [count, setCount] = useState(1);
   const [rating, setRating] = useState(0);
   const [commentRating, setCommentRating] = useState(0);
+  const [hovered, setHovered] = useState(false);
+  const [isWishListed, setIsWishListed] = useState(false);
+  const [isBasketModalVisible, setIsBasketModalVisible] = useState(false);
+  const [isWishModalVisible, setIsWishModalVisible] = useState(false);
+  const dispatch = useDispatch();
 
   if (!item) {
     return <p>Product details not available</p>;
   }
+
   const handleStarClick = (value) => {
     setRating(value);
   };
@@ -24,16 +38,58 @@ const OneProduct = () => {
     setCommentRating(value);
   };
 
+  const addBasket = () => {
+    const payload = {
+      id: item.id,
+      price: item.price,
+      title: item.title,
+      img: item.img,
+      count: count,
+    };
+    dispatch(addToBasket(payload));
+    showBasketModal();
+  };
+
+  const toggleWishHandler = () => {
+    if (isWishListed) {
+      dispatch(removeWishItem(item.id));
+    } else {
+      const payload = {
+        id: item.id,
+        title: item.title,
+        price: item.price,
+        img: item.img,
+      };
+      dispatch(addToWishList(payload));
+      showWishModal();
+    }
+    setIsWishListed(!isWishListed);
+  };
+
+  const showBasketModal = () => {
+    setIsBasketModalVisible(true);
+    setTimeout(() => {
+      setIsBasketModalVisible(false);
+    }, 3000);
+  };
+
+  const showWishModal = () => {
+    setIsWishModalVisible(true);
+    setTimeout(() => {
+      setIsWishModalVisible(false);
+    }, 3000);
+  };
+
   return (
     <div style={{ backgroundColor: "#f2f2f2" }}>
       <div className={oneStyle.container}>
         <div className={oneStyle.listText}>
           <Link to={"/"}>Ana Səhifə</Link>
-          <FaChevronRight style={{ color: "6c6c6c", fontSize: ".8em" }} />
+          <FaChevronRight className={oneStyle.textRight} />
           <Link to={"/"}>{category.split("-").join(" ")}</Link>
-          <FaChevronRight style={{ color: "6c6c6c", fontSize: ".8em" }} />
+          <FaChevronRight className={oneStyle.textRight} />
           <Link to={"/"}>{subCategory}</Link>
-          <FaChevronRight style={{ color: "6c6c6c", fontSize: ".8em" }} />
+          <FaChevronRight className={oneStyle.textRight} />
           <Link to={"/"}>{item.title}</Link>
         </div>
         <div className={oneStyle.prItems}>
@@ -89,18 +145,29 @@ const OneProduct = () => {
               </button>
             </div>
             <div className={oneStyle.cart}>
-              <button>Səbətə at</button>
-              <GrFavorite style={{ color: "#ff8300" }} />
-              <SlRefresh style={{ color: "#ff8300" }} />
+              <button onClick={addBasket}>Səbətə at</button>
+              <div
+                onMouseEnter={() => setHovered(true)}
+                onMouseLeave={() => setHovered(false)}
+                onClick={toggleWishHandler}
+                className={oneStyle.setHovered}
+              >
+                {isWishListed ? (
+                  <MdFavorite className={oneStyle.transition} />
+                ) : (
+                  <MdFavoriteBorder className={oneStyle.transition} />
+                )}
+              </div>
+              <SlRefresh className={oneStyle.colorButton} />
             </div>
           </div>
         </div>
         <div className={oneStyle.rate}>
-          <p style={{ color: "#ff8300" }}>Şərhlər (0)</p>
-          <span style={{ font: "400 .7em sans-serif" }}>
+          <p className={oneStyle.colorButton}>Şərhlər (0)</p>
+          <span className={oneStyle.itemSpan}>
             Bu məhsul üçün şərh yazılmayıb
           </span>
-          <p style={{ fontWeight: "700", margin: "10px 0" }}>Şərh yaz</p>
+          <p className={oneStyle.itemP}>Şərh yaz</p>
           <input type="text" name="name" placeholder="Adınız" />
           <textarea name="comment" placeholder="Şərh" rows={15}></textarea>
           <div className={oneStyle.stars}>
@@ -116,6 +183,16 @@ const OneProduct = () => {
           <button>Davam et</button>
         </div>
       </div>
+      <BasketModal
+        title={item.title}
+        img={item.img}
+        isVisible={isBasketModalVisible}
+      />
+      <WishModal
+        title={item.title}
+        img={item.img}
+        isVisible={isWishModalVisible}
+      />
     </div>
   );
 };

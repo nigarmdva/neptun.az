@@ -111,6 +111,25 @@
 .prList h6:hover h6 {
   color: #ff8300;
 }
+.wish {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  color: #ff8300;
+  justify-content: center;
+
+  cursor: pointer;
+  font-size: 1.3em;
+  transition: color 0.3s ease;
+}
+.wish:hover {
+  background-color: #ff8300;
+}
+.colorButton {
+  color: #ff8300;
+}
 @media (min-width: 768px) {
   .product {
     width: 100%;

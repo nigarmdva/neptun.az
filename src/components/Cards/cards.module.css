@@ -34,7 +34,11 @@
 
 .text {
   display: flex;
+  padding: 10px 5px 5px;
   justify-content: space-between;
+}
+.cardIcon {
+  font-size: 1.6em;
 }
 
 @media (max-width: 990px) {

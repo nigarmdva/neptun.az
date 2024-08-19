@@ -2,6 +2,7 @@
   background-color: #fff;
   position: absolute;
   z-index: 9999991;
+  top: 0px;
 }
 
 .menuItemHeader {
@@ -44,7 +45,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 5px;
+  padding: 5px;
 }
 
 .hoverMenu:hover {
@@ -68,6 +69,16 @@
 
 .hoverMenu:hover .subMenu {
   display: block;
+}
+.menuItem:last-child {
+  background-color: #ff8300;
+  color: #fff;
+}
+.menuItem:last-child span {
+  color: #fff;
+}
+.catRight {
+  font-size: 0.5em;
 }
 
 @media only screen and (min-width: 990px) {

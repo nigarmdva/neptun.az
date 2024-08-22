@@ -376,7 +376,7 @@ const Header = ({ categories }) => {
               className={navbarStyle.navUl1}
               style={{ borderBottom: "1px solid #ddd" }}
             >
-              <Link>Ana Səhifə</Link>
+              <Link to={"/"}>Ana Səhifə</Link>
             </div>
           </li>
           <li>
@@ -522,7 +522,7 @@ const Header = ({ categories }) => {
               className={navbarStyle.navUl1}
               style={{ borderBottom: "1px solid #ddd" }}
             >
-              <Link>Əlaqə</Link>
+              <Link to={"/contact"}>Əlaqə</Link>
             </div>
           </li>
         </ul>

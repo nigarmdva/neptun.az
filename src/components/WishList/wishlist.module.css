@@ -110,7 +110,7 @@ table thead {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
-  padding: 14.5px 0;
+  padding: 15px 0;
   text-align: center;
   justify-content: center;
 }

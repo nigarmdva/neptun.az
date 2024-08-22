@@ -192,6 +192,7 @@
   color: #fff;
   font: 400 0.8em sans-serif;
   margin-left: 5px;
+  text-decoration: none;
 }
 .filtrButton {
   display: none;
@@ -251,6 +252,9 @@
 }
 .listCatg {
   cursor: pointer;
+}
+.listStr {
+  padding-bottom: 1px;
 }
 @media (max-width: 1000px) {
   .filtrButton {

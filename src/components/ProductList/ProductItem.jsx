@@ -73,8 +73,8 @@ const ProductItem = ({ item }) => {
       </div>
       <div className={productStyle.prLeft}>
         <div className={productStyle.prItems}>
-          <h6>{item.title}</h6>
-          <p>{item.price}₼</p>
+          <h6 className={productStyle.title}>{item.title}</h6>
+          <p className={productStyle.price}>{item.price}₼</p>
           <div className={productStyle.prdCount}>
             <button
               onClick={() => {

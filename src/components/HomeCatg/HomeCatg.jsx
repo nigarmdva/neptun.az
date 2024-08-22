@@ -186,35 +186,42 @@ const HomeCatg = () => {
     console.log("Selected Category:", data[selectedIndex]);
   };
 
+  const handleDropdownChange = (event) => {
+    const selectedIndex = parseInt(event.target.value, 10);
+    if (!isNaN(selectedIndex)) {
+      setActiveIndex(selectedIndex);
+    }
+  };
   return (
-    <div className={homecatgStyle.catgDiv}>
-      <Carousel
-        activeIndex={activeIndex}
-        onSelect={handleSelect}
-        className={homecatgStyle.homeCarousel}
-      >
-        {data.map((item) => (
-          <Carousel.Item key={item.id}>
-            <img
-              className={homecatgStyle.homeCarouselItem}
-              src={item.image}
-              alt={item.name}
-            />
-            <Carousel.Caption className={homecatgStyle.sliderText}>
-              <span>Kateqoriyalar:</span>
-              <p>{item.name}</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-        ))}
-      </Carousel>
-
-      {selectedCategory && selectedCategory.cards && (
-        <ProductCarousel
-          cards={selectedCategory.cards}
-          count={count}
-          setCount={setCount}
-        />
-      )}
+    <div>
+      <div className={homecatgStyle.catgDiv}>
+        <Carousel
+          activeIndex={activeIndex}
+          onSelect={handleSelect}
+          className={homecatgStyle.homeCarousel}
+        >
+          {data.map((item) => (
+            <Carousel.Item key={item.id}>
+              <img
+                className={homecatgStyle.homeCarouselItem}
+                src={item.image}
+                alt={item.name}
+              />
+              <Carousel.Caption className={homecatgStyle.sliderText}>
+                <span>Kateqoriyalar:</span>
+                <p>{item.name}</p>
+              </Carousel.Caption>
+            </Carousel.Item>
+          ))}
+        </Carousel>
+        {selectedCategory && selectedCategory.cards && (
+          <ProductCarousel
+            cards={selectedCategory.cards}
+            count={count}
+            setCount={setCount}
+          />
+        )}
+      </div>
     </div>
   );
 };

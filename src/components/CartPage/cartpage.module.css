@@ -57,6 +57,8 @@
 }
 .tableContainer {
   overflow-x: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
 }
 .tableContainer th,
 .tableContainer td {

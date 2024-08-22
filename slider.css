@@ -169,3 +169,19 @@
 .rangeSlider.thumb:active {
   background-color: #ff8300;
 }
+.slick-dots {
+  visibility: hidden;
+}
+.slick-arrow {
+  font-size: 0px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  top: 50%;
+}
+.modal-content {
+  font-size: 14px; /* Veya istediğiniz boyut */
+  line-height: 1.5;
+}

@@ -94,7 +94,7 @@ const WishList = (item) => {
                               <td className={wishStyle.wishPrice}>
                                 {item.price} AZN
                               </td>
-                              <td>
+                              <td className={wishStyle.wishButtons}>
                                 <button
                                   className={wishStyle.shopping}
                                   onClick={() => addBasket(item)}

@@ -18,12 +18,12 @@ const Contact = () => {
           </div>
 
           <div className={styleContact.contactDiv}>
-            <div c>
+            <div className={styleContact.map}>
               <iframe
                 src="https://www.google.com/maps/d/embed?mid=1jGglul00JBwAusg1TLh9cnylYY1AS3Rx"
                 allowfullscreen
                 loading="lazy"
-                width="220%"
+                width="100%"
                 height="510vh"
               ></iframe>
             </div>

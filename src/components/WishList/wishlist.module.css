@@ -29,6 +29,8 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  /* margin-bottom: 30px; */
 }
 .listText {
   display: flex;
@@ -103,4 +105,32 @@ table thead {
 .wishPrice {
   color: #ff8300;
   font: 600 1.3em sans-serif;
+}
+.wishButtons {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  padding: 14.5px 0;
+  text-align: center;
+  justify-content: center;
+}
+.wishButtons button {
+  color: #fff !important;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 15px;
+  width: 60px;
+  outline: none;
+  border: none;
+  font-size: 1.2em;
+}
+.tableContainer {
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+@media (max-width: 755px) {
+  .wishDiv {
+    width: 100%;
+  }
 }

@@ -33,7 +33,7 @@
 .stickyNav {
   z-index: 9999992;
   position: sticky;
-  top: 0;
+  top: -0.1px;
   left: 0;
   width: 100%;
 }
@@ -231,6 +231,7 @@
 .nestedUl {
   display: flex;
   flex-direction: column;
+  padding: 5px;
 }
 .nestedUl li {
   cursor: pointer;

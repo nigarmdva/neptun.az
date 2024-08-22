@@ -168,11 +168,12 @@ const ProductList = () => {
                   <div
                     key={category.id}
                     className={listStyle.category}
-                    onClick={() => setSubCategory(category.name)}
+                    // onClick={() => setSubCategory(category.name)}
                   >
                     {category.name}
                   </div>
                 ))}
+                {console.log(data.map((category) => category.name))}
               </div>
               <div className={listStyle.marka}>
                 <span>Markası</span>

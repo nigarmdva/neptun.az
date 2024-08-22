@@ -3,7 +3,6 @@ import Cards from "../../components/Cards/Cards";
 import ControlledCarousel from "../../components/Carousel/ControlledCarousel";
 import CategoriesDesk from "../../components/CategoriesDesktop/CategoriesDesk";
 import HomeCatg from "../../components/HomeCatg/HomeCatg";
-import SelectCatg from "../../components/SelectCatg/SelectCatg";
 import Footer from "../../layout/footer/Footer";
 import Header from "../../layout/header/Header";
 import styleHome from "./home.module.css";

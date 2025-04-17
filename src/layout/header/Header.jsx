@@ -32,6 +32,7 @@ const Header = ({ categories }) => {
   const [hovered, setHovered] = useState(false);
 
   const navigate = useNavigate();
+
   document.addEventListener("scroll", () => {
     if (scrollY > 682) setIsSticky(true);
     else setIsSticky(false);
@@ -522,7 +523,7 @@ const Header = ({ categories }) => {
               className={navbarStyle.navUl1}
               style={{ borderBottom: "1px solid #ddd" }}
             >
-              <Link to={"/contact"}>Əlaqə</Link>
+              <Link to={"/contacts"}>Əlaqə</Link>
             </div>
           </li>
         </ul>

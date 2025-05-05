@@ -38,7 +38,7 @@ const ProductList = () => {
   const fetchData = async (page) => {
     try {
       const response = await fetch(
-        `https://mirafgan.me/neptun/products?subcategory=${subCategory}&category=${category}&per_page=${perPage}&page=${page}`
+        `http://localhost:3032/neptun/products?subcategory=${subCategory}&category=${category}&per_page=${perPage}&page=${page}`
       );
       if (!response.ok) {
         throw new Error(`Error status: ${response.status}`);

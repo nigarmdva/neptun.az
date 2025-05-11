@@ -31,9 +31,11 @@ const basketSlice = createSlice({
     },
     updateBasket: (state, action) => {
       const { id, count } = action.payload;
-      console.log(action.payload);
       const index = state.products.findIndex((item) => item.id == id);
-      state.products[index].count = count;
+      if (index !== -1) {
+        state.products[index].count = count;
+        writeFromBasketToStorage(state.products);
+      }
     },
     removeFromBasket: (state, action) => {
       state.products = state.products.filter(

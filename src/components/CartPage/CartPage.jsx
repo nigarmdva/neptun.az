@@ -1,13 +1,14 @@
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import React from "react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import cartpageStyle from "./cartpage.module.css";
 import { FaChevronRight } from "react-icons/fa";
 import { CiCircleRemove } from "react-icons/ci";
 import { SlRefresh } from "react-icons/sl";
 import { FaCaretDown } from "react-icons/fa";
-
+import { addProductSmart, setupOfflineCartSync } from "../../offline-cart";
+import { addToBasket } from "../../features/redux/basketSlice";
 import {
   removeFromBasket,
   updateBasket,
@@ -21,6 +22,11 @@ export const CartPage = () => {
   const handleRemoveClick = (id) => {
     dispatch(removeFromBasket(id));
   };
+  useEffect(() => {
+    setupOfflineCartSync(dispatch, addToBasket);
+  }, []);
+  
+
 
   const toggleKuponVisibility = () => {
     setIsKuponVisible(!isKuponVisible);

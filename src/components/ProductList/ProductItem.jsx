@@ -5,12 +5,15 @@ import { SlRefresh } from "react-icons/sl";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToBasket } from "../../features/redux/basketSlice";
+
 import {
   addToWishList,
   removeWishItem,
 } from "../../features/redux/wishlists/wishSlice";
 import BasketModal from "../BasketModal/BasketModal";
 import WishModal from "../WishModal/WishModal";
+import { addProductSmart, setupOfflineCartSync } from "../../offline-cart";
+
 
 const ProductItem = ({ item }) => {
   const [count, setCount] = useState(1);
@@ -27,7 +30,7 @@ const ProductItem = ({ item }) => {
       img: item.img,
       count: count,
     };
-    dispatch(addToBasket(payload));
+    addProductSmart(payload, dispatch, addToBasket);
     showBasketModal();
   };
 

@@ -6,6 +6,10 @@ import { FaChevronRight, FaChevronDown } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { SlRefresh } from "react-icons/sl";
 import { IoGrid } from "react-icons/io5";
+// import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setupOfflineCartSync } from "../../offline-cart"; // fayl yoluna uyğun
+import { addToBasket } from "../../features/redux/basketSlice";
 
 import RangeSlider from "react-range-slider-input";
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -26,6 +30,11 @@ const ProductList = () => {
   const [sortOption, setSortOption] = useState("");
   const [view, setView] = useState("grid");
   const [activeCatg, setActiveCatg] = useState(null);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    setupOfflineCartSync(dispatch, addToBasket);
+  }, []);
 
   const toggleCatg = (catg) => {
     setActiveCatg(activeCatg === catg ? null : catg);

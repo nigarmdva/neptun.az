@@ -9,3 +9,27 @@ ul {
 a {
   text-decoration: none;
 }
+.pagination{
+  margin: 20px;
+}
+.pagination .page-link {
+  color: #fd7e14; 
+  border: 1px solid #dee2e6;
+  padding: 8px 12px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.pagination .page-link:hover {
+  background-color: #ffe6cc;
+  color: #fd7e14;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #fd7e14;
+  color: white;
+  border-color: #fd7e14;
+  box-shadow: 0 0 10px rgba(253, 126, 20, 0.5);
+  z-index: 2;
+  font-weight: bold;
+}

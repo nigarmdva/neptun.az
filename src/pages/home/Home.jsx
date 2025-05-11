@@ -20,14 +20,14 @@ const Home = () => {
               <Cards />
             </div>
           </div>
-          <div
+          {/* <div
             style={{
               display: "flex",
               flexDirection: "row",
             }}
           >
             <HomeCatg />
-          </div>
+          </div> */}
         </div>
       </div>
       <Footer />

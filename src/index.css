@@ -33,3 +33,23 @@ a {
   z-index: 2;
   font-weight: bold;
 }
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff; /* Scrollbar arxa fonu */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #fd7e14; /* Narıncı scroll hissəsi */
+  border-radius: 6px;
+  border: 2px solid #fff; /* Track ilə arası boşluq hissi verir */
+}
+
+/* Firefox üçün */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #fd7e14 #fff;
+}
